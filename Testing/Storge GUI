@@ -1,0 +1,21 @@
+from tkinter import *
+
+
+
+def Storge():
+
+	root = Tk()
+	root.title('Storge')
+	# root.geometry("1350x900+0+0")
+	root.configure(background="powder blue")
+	Name = Label(root,bg="#999999",fg ="#cc0000",text = "LegenTronics")
+	Name.pack(side=TOP)
+	frame = LabelFrame(root,padx=50 , pady=50)
+	frame.pack(side=BOTTOM)
+
+	b=Button(frame,bg="#1e90ff",text="Storge")
+	b2=Button(frame,text="Retrieval")
+	b.grid(row=0,column=0)
+	b2.grid(row=0,column=1)
+
+	root.mainloop()
