@@ -31,7 +31,7 @@ void stepMotor1( const geometry_msgs::Point& msg){
 }
 
 
-ros::Subscriber<geometry_msgs::Point> motor1("motor", &stepMotor1);
+ros::Subscriber<geometry_msgs::Point> motor1("motor1/start", &stepMotor1);
 
 
 void setup() {
