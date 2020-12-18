@@ -1,0 +1,7 @@
+cd /snap/arduino/51/Arduino/libraries/ros_lib/ros
+msg.h (it is commented)
+
+==============================
+cd /opt/ros/noetic/lib/python3/dist-packages/rospy/impl
+sudo gedit tcpros_base.py 
+line 160 (commented)
