@@ -29,14 +29,54 @@ void stepMotor1( const geometry_msgs::Point& msg){
     long positions[2]; // Array of desired stepper positions
     positions[0] = msg.x;
     positions[1] = msg.y;
-    //positions[2] = msg.z;  
     steppers.moveTo(positions);
     steppers.runSpeedToPosition();
     delay(1000); 
 }
 
 
+void place1( const std_msgs::Empty& toggle_msg){
+  long currentPosition = stepper2.currentPosition();
+  stepper2.setCurrentPosition(stepper2.currentPosition());
+  
+  delay(1000);
+  stepper3.move(10000);
+  stepper3.runToPosition();
+  delay(100);
+  stepper2.move(-2000);
+  stepper2.runToPosition();
+  delay(100);
+  stepper3.move(-5000);
+  stepper3.runToPosition();
+  delay(100);
+  stepper2.move(2000);
+  stepper2.runToPosition();
+  delay(100);
+}
+
+void take1( const std_msgs::Empty& toggle_msg){
+  long currentPosition = stepper2.currentPosition();
+  stepper2.setCurrentPosition(stepper2.currentPosition());
+  
+  stepper2.move(-2000);
+  stepper2.runToPosition();
+  delay(100);
+  stepper3.move(10000);
+  stepper3.runToPosition();
+  delay(100);
+  stepper2.move(3000);
+  stepper2.runToPosition();
+  delay(100);
+  stepper3.move(-5000);
+  stepper3.runToPosition();
+  delay(100);
+}
+
+
+
 ros::Subscriber<geometry_msgs::Point> motor1("motor", &stepMotor1);
+ros::Subscriber<std_msgs::Empty> sub1("place", &place1);
+ros::Subscriber<std_msgs::Empty> sub2("take", &take1);
 
 
 void setup() {
@@ -45,13 +85,13 @@ void setup() {
   stepper1.setMaxSpeed(2000.0);
   stepper1.setAcceleration(1000.0);
   stepper1.setEnablePin(X_ENABLE_PIN);
-  stepper1.setPinsInverted(false, true, true); //invert logic of enable pin
+  stepper1.setPinsInverted(true,false, true); //invert logic of enable pin
   stepper1.enableOutputs();
   
   stepper2.setMaxSpeed(2000.0);
   stepper2.setAcceleration(1000.0);
   stepper2.setEnablePin(Y_ENABLE_PIN);
-  stepper2.setPinsInverted(true, true, true); //invert logic of enable pin
+  stepper2.setPinsInverted(false, false, true); //invert logic of enable pin
   stepper2.enableOutputs();
     
   stepper3.setMaxSpeed(2000.0);
@@ -63,11 +103,13 @@ void setup() {
   // Then give them to MultiStepper to manage
   steppers.addStepper(stepper1);
   steppers.addStepper(stepper2);
-  //steppers.addStepper(stepper3);
 
   
   nh.initNode();
   nh.subscribe(motor1);
+  nh.subscribe(sub1);
+  nh.subscribe(sub2);
+
 }
 
 void loop() {

@@ -7,12 +7,14 @@
 #define X_ENABLE_PIN 38
 
 
-#define Z_STEP_PIN 46
-#define Z_DIR_PIN 48
-#define Z_ENABLE_PIN 62
+
+#define Y_STEP_PIN         60
+#define Y_DIR_PIN          61
+#define Y_ENABLE_PIN       56
 
 AccelStepper stepper1(1, X_STEP_PIN, X_DIR_PIN); 
-AccelStepper stepper2(1, Z_STEP_PIN, Z_DIR_PIN);
+AccelStepper stepper2(1, Y_STEP_PIN, Y_DIR_PIN);
+MultiStepper steppers;
 
 // Define the Pins used
 #define home_switch 32
@@ -28,17 +30,18 @@ void setup() {
    delay(5); 
 
    //  Set Max Speed and Acceleration of each Steppers at startup for homing
-  stepper1.setMaxSpeed(100.0);      // Set Max Speed of Stepper (Slower to get better accuracy)
-  stepper1.setAcceleration(100.0);  // Set Acceleration of Stepper
+  stepper1.setMaxSpeed(8000.0);      // Set Max Speed of Stepper (Slower to get better accuracy)
+  stepper1.setAcceleration(1000.0);  // Set Acceleration of Stepper
   stepper1.setEnablePin(X_ENABLE_PIN);
-  stepper1.setPinsInverted(false, false, true); //invert logic of enable pin
+  stepper1.setPinsInverted(true, false, true); //invert logic of enable pin
   stepper1.enableOutputs();
-  stepper2.setMaxSpeed(100.0);
-  stepper2.setAcceleration(100.0);
-  stepper2.setEnablePin(Z_ENABLE_PIN);
+  stepper2.setMaxSpeed(8000.0);
+  stepper2.setAcceleration(1000.0);
+  stepper2.setEnablePin(Y_ENABLE_PIN);
   stepper2.setPinsInverted(false, false, true); //invert logic of enable pin
   stepper2.enableOutputs();
-  
+  steppers.addStepper(stepper1);
+  steppers.addStepper(stepper2);
 
 // Start Homing procedure of Stepper Motor at startup
 
@@ -88,11 +91,11 @@ void setup() {
   }
   
   stepper1.setCurrentPosition(0);
-  stepper1.setMaxSpeed(1000.0);      // Set Max Speed of Stepper (Faster for regular movements)
-  stepper1.setAcceleration(1000.0);  // Set Acceleration of Stepper
+//  stepper1.setMaxSpeed(1000.0);      // Set Max Speed of Stepper (Faster for regular movements)
+//  stepper1.setAcceleration(1000.0);  // Set Acceleration of Stepper
     stepper2.setCurrentPosition(0);
-  stepper2.setMaxSpeed(1000.0);      // Set Max Speed of Stepper (Faster for regular movements)
-  stepper2.setAcceleration(1000.0);  // Set Acceleration of Stepper
+//  stepper2.setMaxSpeed(1000.0);      // Set Max Speed of Stepper (Faster for regular movements)
+//  stepper2.setAcceleration(1000.0);  // Set Acceleration of Stepper
   //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
   //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
