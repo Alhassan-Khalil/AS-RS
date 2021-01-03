@@ -1,5 +1,5 @@
 from tkinter import *
-import main_GUI
+# import main_GUI
 import Msg_Publisher_take
 
 
@@ -81,8 +81,8 @@ def Retrieval():
 
 def back():
 	re_root.destroy()
-	main_GUI.main()
+	# main_GUI.main()
 
 
 if __name__ == "__main__":
-	Storge()
+	Retrieval()

@@ -17,7 +17,7 @@ def A1():
     msg.x = 1000
     msg.y = 5000
     rospy.loginfo("motor going to :x=%d y=%d" %(msg.x,msg.y))
-    ##pub.publish(msg)
+    pub.publish(msg)
     pub2.publish()
 def A2():
     msg.x = 2000

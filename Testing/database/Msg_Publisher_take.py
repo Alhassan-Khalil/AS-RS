@@ -1,7 +1,8 @@
 import rospy
 from geometry_msgs.msg import Point, Twist
 from std_msgs.msg import Empty
-#include <std_msgs/Empty.h>
+import numpy as np
+
 
 global msg
 msg= Point()
@@ -11,14 +12,18 @@ def start():
     global pub2
     rospy.init_node("motor", anonymous=True)
     pub = rospy.Publisher('motor',Point, queue_size=10)
-    pub2 = rospy.Publisher('place',Empty,queue_size=10)
-
+    pub2 = rospy.Publisher('take',Empty,queue_size=10)
+    global ST
+    file = open("Storge", "rb")
+    ST= np.load(file)
 def A1():
     msg.x = 1000
     msg.y = 5000
     rospy.loginfo("motor going to :x=%d y=%d" %(msg.x,msg.y))
-    ##pub.publish(msg)
+    pub.publish(msg)
     pub2.publish()
+    print(ST)
+
 def A2():
     msg.x = 2000
     msg.y = 5000

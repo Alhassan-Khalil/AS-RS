@@ -14,8 +14,8 @@ def start():
     pub2 = rospy.Publisher('take',Empty,queue_size=10)
 
 def A1():
-    msg.x = 1000
-    msg.y = 5000
+    msg.x = 50000
+    msg.y = 70000
     rospy.loginfo("motor going to :x=%d y=%d" %(msg.x,msg.y))
     pub.publish(msg)
     pub2.publish()
