@@ -24,12 +24,10 @@ def main():
     frame.pack(padx=50)
     def exit1():
     	root.destroy()
-    b2 = Button(frame,text ="/",width=20 ,height=5 ,command=exit)
-    b2.grid(row=0,column=1)
     b = Button(frame,text = "Auto" , width = 20 , height = 5 , command=start)
     b.grid(row=0,column=0)
     b3 = Button(frame,text = "EXIT" , width = 20 , height = 5 , command=exit)
-    b3.grid(row=0,column=2)
+    b3.grid(row=0,column=1)
     root.mainloop()
 
 
@@ -63,11 +61,11 @@ def Auto():
     global after_id
     secs += 1
     (status,TagType) = MIFAREReader.MFRC522_Request(MIFAREReader.PICC_REQIDL)
-    if status == MIFAREReader.MI_OK:
-    	print("Card detected")
+    if status != MIFAREReader.MI_OK:
+    	print("In My Way!")
     	Msg_Publisher_take.Orgin
     	taking(0,0,0)
-    after_id = root.after(1000, Auto)  # check again in 1
+    after_id = root.after(70000, Auto)  # check again in 1
 
 
 def taking(i,j,k):

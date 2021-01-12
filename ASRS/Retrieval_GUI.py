@@ -22,18 +22,13 @@ def Retrieval():
 	# Setting icon of master window
 	re_root.iconphoto(False, img)
 	# re_root.geometry("1350x900+0+0")
-	re_root.configure(background="powder blue")
+	re_root.configure(background="SlateGray3")
 
-
-
-
-
-
-	Name = Label(re_root,bg="#999999",fg ="#cc0000",text = "Retrieval", font = ('Comic Sans MS',30),)
+	Name = Label(re_root,bg="SlateGray3",fg ="#cc0000",text = "Retrieval", font = ('Ubuntu',30),)
 	Name.pack(side=TOP)
-	frame = LabelFrame(re_root,padx=50 , pady=50)
+	frame = LabelFrame(re_root,bg="SlateGray4",padx=50 , pady=50)
 	frame.pack(side=RIGHT)
-	frame2 = LabelFrame(re_root,padx=50 , pady=50)
+	frame2 = LabelFrame(re_root,bg="SlateGray4",padx=50 , pady=50)
 	frame2.pack(side=LEFT)
 
 
@@ -106,14 +101,22 @@ def Retrieval():
 
 	b33=Button(frame2,text="AUTO",bg="#5fb878",width=20,height=3, command=AUTO_Take.main)
 	b33.grid(row=0,column=0)
+	label1=Label(frame2,bg="SlateGray4",text = "Automatic Retrieval")
+	label1.grid(row=0,column=1)
+	
 	b34 = Button(frame2,text = "Reset" , width = 20 , height = 3 , command=Reset)
 	b34.grid(row=2,column=0)
+	label2=Label(frame2,bg="SlateGray4",text = "Reset all units")
+	label2.grid(row=2,column=1)
+	
 	b35=Button(frame2,text="STOP",bg="#cc0000",width=20,height=3, command=AUTO_Take.exit)
 	b35.grid(row=1,column=0)
 	b36=Button(frame2,text="BACK",width=20,height=3 ,command=back)
 	b36.grid(row=4,column=0)
 	b37=Button(frame2,text="Orgin",width=20,height=3 ,command=Msg_Publisher_take.Orgin)
 	b37.grid(row=3,column=0)
+	label3=Label(frame2,bg="SlateGray4",text = "Going to the home position ")
+	label3.grid(row=3,column=1)
 
 	Msg_Publisher_take.start()
 	re_root.mainloop()

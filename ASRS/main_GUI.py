@@ -23,20 +23,18 @@ def main():
 	# Setting icon of master window
 	root.iconphoto(False, img)
 	#root.attributes('-zoomed', True)
-	RWidth=root.winfo_screenwidth()
-	RHeight=root.winfo_screenheight()
-	#print(RWidth)
-	#print(RHeight)
+	
 	root.title('AS/RS')
 	global new_window
 	new_window = root
 	root.geometry("1280x720+0+0")
-	root.configure(background="powder blue")
-	Name = Label(root,bg="#999999",fg ="#cc0000",text = "LegenTronics", font = ('Comic Sans MS',30),)
+	root.configure(background="SlateGray3")
+	Name = Label(root,bg="SlateGray3",fg ="#cc0000",text = "LegenTronics", font = ('Comic Sans MS',40),)
 	Name.pack(side=TOP)
-	logo = Label(root,image = img,padx=10,pady=10)
+	logo = Label(root,image = img,padx=10,pady=10,bg="SlateGray3")
 	logo.pack(side=TOP) 
-	frame = LabelFrame(root,padx=50 , pady=50)
+	
+	frame = LabelFrame(root,padx=50 , pady=50,bg="SlateGray4")
 	frame.pack(padx=50 )
 
 

@@ -1,5 +1,5 @@
 import rospy
-from geometry_msgs.msg import Point, Twist
+from geometry_msgs.msg import Point
 from std_msgs.msg import Empty
 from time import sleep
 from tkinter import messagebox
@@ -16,11 +16,13 @@ def start():
     global take
     global home
     global ST
+    global stop
     rospy.init_node("motor", anonymous=True)
     pub = rospy.Publisher('motor',Point, queue_size=10)
     place = rospy.Publisher('place',Empty,queue_size=10)
     take = rospy.Publisher('take',Empty,queue_size=10)
-    home=rospy.Publisher('home',Empty,queue_size=10)
+    home = rospy.Publisher('home',Empty,queue_size=10)
+    stop = rospy.Publisher('home',Empty,queue_size=10)
     rate = rospy.Rate(1)
     #---------------
     file = open("Storge", "rb")
@@ -32,10 +34,13 @@ def Orgin():
    # msg.y = 0
     rospy.loginfo("motor going to Orgin ")
     home.publish()
-
+    
+def Stop():
+    rospy.loginfo("Stoping")
+    stop.publish()
 
 def A1():
-    msg.x = 79500
+    msg.x = 80500
     msg.y = 92000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -60,7 +65,7 @@ def A1():
         messagebox.showwarning("warning", "A1 unit is FULL" )
 
 def A2():
-    msg.x = 60000
+    msg.x = 61000
     msg.y = 92000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -83,7 +88,7 @@ def A2():
 
 
 def A3():
-    msg.x = 40500
+    msg.x = 41500
     msg.y = 92000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -106,7 +111,7 @@ def A3():
 
 
 def A4():
-    msg.x = 21000
+    msg.x = 22600
     msg.y = 92000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -126,8 +131,8 @@ def A4():
     else:
         messagebox.showwarning("warning", "A4 unit is FULL" )
 def B1():
-    msg.x = 97500
-    msg.y = 70000
+    msg.x = 80500
+    msg.y = 80000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[1,0] == 0 :
@@ -148,8 +153,8 @@ def B1():
 
 
 def B2():
-    msg.x = 60000
-    msg.y = 82000
+    msg.x = 61000
+    msg.y = 80000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[1,1] == 0 :
@@ -169,8 +174,8 @@ def B2():
         messagebox.showwarning("warning", "B2 unit is FULL" )
 
 def B3():
-    msg.x = 40500
-    msg.y = 82000
+    msg.x = 41500
+    msg.y = 80000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[1,2] == 0 :
@@ -190,8 +195,8 @@ def B3():
         messagebox.showwarning("warning", "B3 unit is FULL" )
 
 def B4():
-    msg.x = 21000
-    msg.y = 82000
+    msg.x = 22600
+    msg.y = 80000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[1,3] == 0 :
@@ -211,8 +216,8 @@ def B4():
         messagebox.showwarning("warning", "B4 unit is FULL" )
 
 def C1():
-    msg.x = 79500
-    msg.y = 70000
+    msg.x = 80500
+    msg.y = 68000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[2,0] == 0 :
@@ -232,8 +237,8 @@ def C1():
         messagebox.showwarning("warning", "C1 unit is FULL" )
 
 def C2():
-    msg.x = 60000
-    msg.y = 70000
+    msg.x = 61000
+    msg.y = 68000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[2,1] == 0 :
@@ -253,8 +258,8 @@ def C2():
         messagebox.showwarning("warning", "C2 unit is FULL" )
 
 def C3():
-    msg.x = 40500
-    msg.y = 70000
+    msg.x = 41500
+    msg.y = 68000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[2,2] == 0 :
@@ -274,8 +279,8 @@ def C3():
         messagebox.showwarning("warning", "C3 unit is FULL" )
 
 def C4():
-    msg.x = 21000
-    msg.y = 70000
+    msg.x = 22600
+    msg.y = 68000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[2,3] == 0 :
@@ -295,8 +300,8 @@ def C4():
         messagebox.showwarning("warning", "C4 unit is FULL" )
 
 def D1():
-    msg.x = 79500
-    msg.y = 58000
+    msg.x = 80500
+    msg.y = 56000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[3,0] == 0 :
@@ -316,8 +321,8 @@ def D1():
         messagebox.showwarning("warning", "D1 unit is FULL" )
 
 def D2():
-    msg.x = 60000
-    msg.y = 58000
+    msg.x = 61000
+    msg.y = 56000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[3,1] == 0 :
@@ -337,8 +342,8 @@ def D2():
         messagebox.showwarning("warning", "D2 unit is FULL" )
 
 def D3():
-    msg.x = 40500
-    msg.y = 58000
+    msg.x = 41500
+    msg.y = 56000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[3,2] == 0 :
@@ -358,7 +363,7 @@ def D3():
         messagebox.showwarning("warning", "D3 unit is FULL" )
 
 def D4():
-    msg.x = 21000
+    msg.x = 22600
     msg.y = 56000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -379,8 +384,8 @@ def D4():
         messagebox.showwarning("warning", "D1 unit is FULL" )
 
 def E1():
-    msg.x = 79500
-    msg.y = 46000
+    msg.x = 80500
+    msg.y = 44000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[4,0] == 0 :
@@ -400,8 +405,8 @@ def E1():
         messagebox.showwarning("warning", "E1 unit is FULL" )
 
 def E2():
-    msg.x = 60000
-    msg.y = 46000
+    msg.x = 61000
+    msg.y = 44000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[4,1] == 0 :
@@ -421,8 +426,8 @@ def E2():
         messagebox.showwarning("warning", "E2 unit is FULL" )
 
 def E3():
-    msg.x = 40500
-    msg.y = 46000
+    msg.x = 41500
+    msg.y = 44000
     file = open46000("Storge", "rb")
     ST= np.load(file)
     if ST[4,2] == 0 :
@@ -442,8 +447,8 @@ def E3():
         messagebox.showwarning("warning", "E3 unit is FULL" )
 
 def E4():
-    msg.x = 21000
-    msg.y = 46000
+    msg.x = 22600
+    msg.y = 44000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[4,3] == 0 :
@@ -464,8 +469,8 @@ def E4():
 
 
 def F1():
-    msg.x = 79500
-    msg.y = 34000
+    msg.x = 80500
+    msg.y = 32000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[5,0] == 0 :
@@ -485,8 +490,8 @@ def F1():
         messagebox.showwarning("warning", "F1 unit is FULL" )
 
 def F2():
-    msg.x = 60000
-    msg.y = 34000
+    msg.x = 61000
+    msg.y = 32000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[5,1] == 0 :
@@ -506,8 +511,8 @@ def F2():
         messagebox.showwarning("warning", "F2 unit is FULL" )
 
 def F3():
-    msg.x = 40500
-    msg.y = 34000
+    msg.x = 41500
+    msg.y = 32000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[5,2] == 0 :
@@ -527,8 +532,8 @@ def F3():
         messagebox.showwarning("warning", "F3 unit is FULL" )
 
 def F4():
-    msg.x = 21000
-    msg.y = 34000
+    msg.x = 22600
+    msg.y = 32000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[5,3] == 0 :
@@ -548,8 +553,8 @@ def F4():
         messagebox.showwarning("warning", "F1 unit is FULL" )
 
 def G1():
-    msg.x = 79500
-    msg.y = 22000
+    msg.x = 80500
+    msg.y = 20500
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[6,0] == 0 :
@@ -569,8 +574,8 @@ def G1():
         messagebox.showwarning("warning", "G1 unit is FULL" )
 
 def G2():
-    msg.x = 60000
-    msg.y = 22000
+    msg.x = 61000
+    msg.y = 20500
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[6,1] == 0 :
@@ -590,7 +595,7 @@ def G2():
         messagebox.showwarning("warning", "G2 unit is FULL" )
 
 def G3():
-    msg.x = 41000
+    msg.x = 41500
     msg.y = 20500
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -614,7 +619,7 @@ def G3():
         messagebox.showwarning("warning", "G3 unit is FULL" )
 
 def G4():
-    msg.x = 22000
+    msg.x = 22600#22000
     msg.y = 20500
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -638,15 +643,18 @@ def G4():
         messagebox.showwarning("warning", "G4 unit is FULL" )
 
 def H1():
-    msg.x = 79500
-    msg.y = 7000
+    msg.x = 80500
+    msg.y = 8000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[7,0] == 0 :
+        rospy.sleep(5.)
         take.publish()
+        rospy.loginfo("motor taking")
+        rospy.sleep(10.)
         pub.publish(msg)
         rospy.loginfo("motor going to :x=%d y=%d" %(msg.x,msg.y))
-        rospy.sleep(10.)
+        rospy.sleep(15.)
         place.publish()
         rospy.loginfo("motor placing")
         ST[7,0] = 1
@@ -659,15 +667,18 @@ def H1():
         messagebox.showwarning("warning", "H1 unit is FULL" )
 
 def H2():
-    msg.x = 60000
-    msg.y = 7000
+    msg.x = 61000
+    msg.y = 8000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[7,1] == 0 :
+        rospy.sleep(5.)
         take.publish()
+        rospy.loginfo("motor taking")
+        rospy.sleep(10.)
         pub.publish(msg)
         rospy.loginfo("motor going to :x=%d y=%d" %(msg.x,msg.y))
-        rospy.sleep(10.)
+        rospy.sleep(15.)
         place.publish()
         rospy.loginfo("motor placing")
         ST[7,1] = 1
@@ -681,14 +692,17 @@ def H2():
 
 def H3():
     msg.x = 41500
-    msg.y = 7000
+    msg.y = 8000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[7,2] == 0 :
+        rospy.sleep(5.)
         take.publish()
+        rospy.loginfo("motor taking")
+        rospy.sleep(10.)
         pub.publish(msg)
         rospy.loginfo("motor going to :x=%d y=%d" %(msg.x,msg.y))
-        rospy.sleep(10.)
+        rospy.sleep(15.)
         place.publish()
         rospy.loginfo("motor placing")
         ST[7,2] = 1
@@ -702,11 +716,11 @@ def H3():
 
 def H4():
     msg.x = 22600
-    msg.y = 7000
+    msg.y = 8000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[7,3] == 0 :
-        rospy.sleep(2.)
+        rospy.sleep(5.)
         take.publish()
         pub.publish(msg)
         rospy.loginfo("motor going to :x=%d y=%d" %(msg.x,msg.y))

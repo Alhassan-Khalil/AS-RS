@@ -18,17 +18,17 @@ def Storge():
 	#st_root.attributes('-zoomed', True)
 	st_root.title('Storage')
 	st_root.geometry("1280x720+0+0")
-	st_root.configure(background="powder blue")
+	st_root.configure(background="SlateGray3")
 	img1 = Image.open('LegenTronics_logo.png')
 	reimg = img1.resize((250,225),Image.ANTIALIAS)
 	img = ImageTk.PhotoImage(reimg)
 	# Setting icon of master window
 	st_root.iconphoto(False, img)
-	Name = Label(st_root,bg="#999999",fg ="#cc0000",text = "Storage", font = ('Comic Sans MS',30),)
+	Name = Label(st_root,bg="SlateGray3",fg ="#cc0000",text = "Storage", font = ('Ubuntu',30),)
 	Name.pack(side=TOP)
-	frame = LabelFrame(st_root,padx=50 , pady=50)
+	frame = LabelFrame(st_root,padx=50 , pady=50,bg="SlateGray4")
 	frame.pack(side=RIGHT)
-	frame2 = LabelFrame(st_root,padx=50 , pady=50)
+	frame2 = LabelFrame(st_root,padx=50 , pady=50,bg="SlateGray4")
 	frame2.pack(side=LEFT)
 
 
@@ -114,19 +114,29 @@ def Storge():
 						np.save(file, ST)
 						file.close
 						
-
+#5fb878
 
 	b33=Button(frame2,text="AUTO",bg="#5fb878",width =20,height=3, command=AUTO_Place.main)
 	b33.grid(row=0,column=0)
+	label1=Label(frame2,bg="SlateGray4",text = "Automatic Storage")
+	label1.grid(row=0,column=1)
+	
 	b34 = Button(frame2,text = "Reset" , width=20 , height = 3 , command=Reset)
 	b34.grid(row=2,column=0)
+	label2=Label(frame2,bg="SlateGray4",text = "Reset all units")
+	label2.grid(row=2,column=1)
 
-	b35=Button(frame2,text="STOP",bg="#cc0000",width =20,height=3,command=exit)
+	b35=Button(frame2,text="STOP",bg="#cc0000",width =20,height=3,command=Msg_Publisher_Place.Stop)
 	b35.grid(row=1,column=0)
+
+	
 	b36=Button(frame2,text="BACK",width=20,height=3 ,command=back)
 	b36.grid(row=4,column=0)
-	b37=Button(frame2,text="Orgin",width=20,height=3 ,command=Msg_Publisher_Place.Orgin)
+	
+	b37=Button(frame2,text="Home",width=20,height=3 ,command=Msg_Publisher_Place.Orgin)
 	b37.grid(row=3,column=0)
+	label3=Label(frame2,bg="SlateGray4",text = "Going to the home position ")
+	label3.grid(row=3,column=1)
 
 	Msg_Publisher_Place.start()
 	st_root.mainloop()

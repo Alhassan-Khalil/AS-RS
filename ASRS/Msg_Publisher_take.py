@@ -34,7 +34,7 @@ def Orgin():
 
 
 def A1():
-    msg.x = 79500
+    msg.x = 80500
     msg.y = 94000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -45,7 +45,9 @@ def A1():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[0,0] = 0
@@ -56,7 +58,7 @@ def A1():
         messagebox.showwarning("warning", "A1 unit is Empty" )
 
 def A2():
-    msg.x = 60000
+    msg.x = 61000
     msg.y = 94000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -67,7 +69,9 @@ def A2():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[0,1] = 0
@@ -79,7 +83,7 @@ def A2():
 
 
 def A3():
-    msg.x = 40500
+    msg.x = 41500
     msg.y = 94000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -90,7 +94,9 @@ def A3():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[0,2] = 0
@@ -102,7 +108,7 @@ def A3():
 
 
 def A4():
-    msg.x = 21000
+    msg.x = 22600
     msg.y = 94000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -113,7 +119,9 @@ def A4():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[0,3] = 0
@@ -123,7 +131,7 @@ def A4():
     else:
         messagebox.showwarning("warning", "A4 unit is Empty" )
 def B1():
-    msg.x = 97500
+    msg.x = 80500
     msg.y = 70000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -134,7 +142,9 @@ def B1():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[1,0] = 0
@@ -146,7 +156,7 @@ def B1():
 
 
 def B2():
-    msg.x = 60000
+    msg.x = 61000
     msg.y = 82000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -157,7 +167,9 @@ def B2():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[1,1] = 0
@@ -168,7 +180,7 @@ def B2():
         messagebox.showwarning("warning", "B2 unit is Empty" )
 
 def B3():
-    msg.x = 40500
+    msg.x = 41500
     msg.y = 82000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -179,7 +191,9 @@ def B3():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[1,2] = 0
@@ -190,7 +204,7 @@ def B3():
         messagebox.showwarning("warning", "B3 unit is Empty" )
 
 def B4():
-    msg.x = 21000
+    msg.x = 22600
     msg.y = 82000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -201,7 +215,9 @@ def B4():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[1,3] = 0
@@ -212,7 +228,7 @@ def B4():
         messagebox.showwarning("warning", "B4 unit is Empty" )
 
 def C1():
-    msg.x = 79500
+    msg.x = 80500
     msg.y = 70000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -223,7 +239,9 @@ def C1():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[2,0] = 0
@@ -234,7 +252,7 @@ def C1():
         messagebox.showwarning("warning", "C1 unit is Empty" )
 
 def C2():
-    msg.x = 60000
+    msg.x = 61000
     msg.y = 70000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -245,7 +263,9 @@ def C2():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[2,1] = 0
@@ -256,7 +276,7 @@ def C2():
         messagebox.showwarning("warning", "C2 unit is Empty" )
 
 def C3():
-    msg.x = 40500
+    msg.x = 41500
     msg.y = 70000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -267,7 +287,9 @@ def C3():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[2,2] = 0
@@ -278,7 +300,7 @@ def C3():
         messagebox.showwarning("warning", "C3 unit is Empty" )
 
 def C4():
-    msg.x = 21000
+    msg.x = 22600
     msg.y = 70000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -289,7 +311,9 @@ def C4():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[2,3] = 0
@@ -300,8 +324,8 @@ def C4():
         messagebox.showwarning("warning", "C4 unit is Empty" )
 
 def D1():
-    msg.x = 79500
-    msg.y = 58000
+    msg.x = 80500
+    msg.y = 56000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[3,0] == 1 :
@@ -311,7 +335,9 @@ def D1():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[3,0] = 0
@@ -322,8 +348,8 @@ def D1():
         messagebox.showwarning("warning", "D1 unit is Empty" )
 
 def D2():
-    msg.x = 60000
-    msg.y = 58000
+    msg.x = 61000
+    msg.y = 56000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[3,1] == 1 :
@@ -333,7 +359,9 @@ def D2():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[3,1] = 0
@@ -344,8 +372,8 @@ def D2():
         messagebox.showwarning("warning", "D2 unit is Empty" )
 
 def D3():
-    msg.x = 40500
-    msg.y = 58000
+    msg.x = 41500
+    msg.y = 56000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[3,2] == 1 :
@@ -355,7 +383,9 @@ def D3():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[3,2] = 0
@@ -366,8 +396,8 @@ def D3():
         messagebox.showwarning("warning", "D3 unit is Empty" )
 
 def D4():
-    msg.x = 21000
-    msg.y = 58000
+    msg.x = 22600
+    msg.y = 56000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[3,3] == 1 :
@@ -377,7 +407,9 @@ def D4():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[3,3] = 0
@@ -388,8 +420,8 @@ def D4():
         messagebox.showwarning("warning", "D1 unit is Empty" )
 
 def E1():
-    msg.x = 79500
-    msg.y = 46000
+    msg.x = 80500
+    msg.y = 44000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[4,0] == 1 :
@@ -399,7 +431,9 @@ def E1():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[4,0] = 0
@@ -410,8 +444,8 @@ def E1():
         messagebox.showwarning("warning", "E1 unit is Empty" )
 
 def E2():
-    msg.x = 60000
-    msg.y = 46000
+    msg.x = 61000
+    msg.y = 44000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[4,1] == 1 :
@@ -421,7 +455,9 @@ def E2():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[4,1] = 0
@@ -432,8 +468,8 @@ def E2():
         messagebox.showwarning("warning", "E2 unit is Empty" )
 
 def E3():
-    msg.x = 40500
-    msg.y = 46000
+    msg.x = 41500
+    msg.y = 44000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[4,2] == 1 :
@@ -443,7 +479,9 @@ def E3():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[4,2] = 0
@@ -454,8 +492,8 @@ def E3():
         messagebox.showwarning("warning", "E3 unit is Empty" )
 
 def E4():
-    msg.x = 21000
-    msg.y = 46000
+    msg.x = 22600
+    msg.y = 44000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[4,3] == 1 :
@@ -465,7 +503,9 @@ def E4():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[4,3] = 0
@@ -477,8 +517,8 @@ def E4():
 
 
 def F1():
-    msg.x = 79500
-    msg.y = 34000
+    msg.x = 80500
+    msg.y = 32000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[5,0] == 1 :
@@ -488,7 +528,9 @@ def F1():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[5,0] = 0
@@ -499,8 +541,8 @@ def F1():
         messagebox.showwarning("warning", "F1 unit is Empty" )
 
 def F2():
-    msg.x = 60000
-    msg.y = 34000
+    msg.x = 61000
+    msg.y = 32000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[5,1] == 1 :
@@ -510,7 +552,9 @@ def F2():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[5,1] = 0
@@ -521,8 +565,8 @@ def F2():
         messagebox.showwarning("warning", "F2 unit is Empty" )
 
 def F3():
-    msg.x = 40500
-    msg.y = 34000
+    msg.x = 41500
+    msg.y = 32000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[5,2] == 1 :
@@ -532,7 +576,9 @@ def F3():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[5,2] = 0
@@ -543,8 +589,8 @@ def F3():
         messagebox.showwarning("warning", "F3 unit is Empty" )
 
 def F4():
-    msg.x = 21000
-    msg.y = 34000
+    msg.x = 22600
+    msg.y = 32000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[5,3] == 1 :
@@ -554,7 +600,9 @@ def F4():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[5,3] = 0
@@ -565,7 +613,7 @@ def F4():
         messagebox.showwarning("warning", "F1 unit is Empty" )
 
 def G1():
-    msg.x = 79500
+    msg.x = 80500
     msg.y = 22000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -576,7 +624,9 @@ def G1():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[6,0] = 0
@@ -587,7 +637,7 @@ def G1():
         messagebox.showwarning("warning", "G1 unit is Empty" )
 
 def G2():
-    msg.x = 60000
+    msg.x = 61000
     msg.y = 22000
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -598,7 +648,9 @@ def G2():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[6,1] = 0
@@ -609,7 +661,7 @@ def G2():
         messagebox.showwarning("warning", "G2 unit is Empty" )
 
 def G3():
-    msg.x = 41000
+    msg.x = 41500
     msg.y = 20500
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -636,7 +688,7 @@ def G3():
         messagebox.showwarning("warning", "G3 unit is Empty" )
 
 def G4():
-    msg.x = 22000
+    msg.x = 22600
     msg.y = 20500
     file = open("Storge", "rb")
     ST= np.load(file)
@@ -661,8 +713,8 @@ def G4():
         messagebox.showwarning("warning", "G4 unit is Empty" )
 
 def H1():
-    msg.x = 79500
-    msg.y = 10000
+    msg.x = 80500
+    msg.y = 8000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[7,0] == 1 :
@@ -672,7 +724,9 @@ def H1():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[7,0] = 0
@@ -683,8 +737,8 @@ def H1():
         messagebox.showwarning("warning", "H1 unit is Empty" )
 
 def H2():
-    msg.x = 60000
-    msg.y = 10000
+    msg.x = 61000
+    msg.y = 8000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[7,1] == 1 :
@@ -694,7 +748,9 @@ def H2():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[7,1] = 0
@@ -706,7 +762,7 @@ def H2():
 
 def H3():
     msg.x = 40500
-    msg.y = 10000
+    msg.y = 8000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[7,2] == 1 :
@@ -716,7 +772,9 @@ def H3():
         take.publish()
         rospy.loginfo("motor placing")
         rospy.sleep(10.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(10.)
         place.publish()
         ST[7,2] = 0
@@ -728,18 +786,20 @@ def H3():
 
 def H4():
     msg.x = 22600
-    msg.y = 7000
+    msg.y = 8000
     file = open("Storge", "rb")
     ST= np.load(file)
     if ST[7,3] == 1 :
         rospy.sleep(5.)
         pub.publish(msg)
         rospy.loginfo("motor going to :x=%d y=%d" %(msg.x,msg.y))
-        rospy.sleep(15.)
+        rospy.sleep(10.)
         take.publish()
         rospy.loginfo("motor Taking")
         rospy.sleep(15.)
-        Orgin()
+        msg.x = 0
+        msg.y = 3000
+        pub.publish(msg)
         rospy.sleep(15.)
         place.publish()
         ST[7,3] = 0
